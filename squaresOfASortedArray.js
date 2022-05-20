@@ -7,25 +7,25 @@ var sortedSquares = function(nums) {
     const x = nums[i]**2;
     if (final[final.length-1] <= x) {
         final.push(x);
+        continue; 
     }
-    if (final[final.length-1] > x) {
-      let L = final.length-1; 
+      let L = final.length-2; 
       while (L >=0) {
-        if (x > final[L-1] ) {
-          final.splice(L-1,0,x);
+        console.log(final[L])
+        if (x > final[L] ) {
+          console.log(final)
+          final.splice(L+1,0,x);
+          console.log(final)
           break;
         }
         L--;
       }
-      if (final[0] > x) {
-        final.splice(0,0,x);
+      if (L==-1) {
+        final.unshift(x);
+        console.log(final)
       }
   }
-
-}
-return final; 
-
-
+  return final; 
 };
  
 
