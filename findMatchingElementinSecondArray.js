@@ -13,3 +13,24 @@ const findMatchingPrimitive = (array1, array2) => {
   }
   return false;
 };
+
+//second solution
+const findMatchingPrimitiveII = (array1, array2) => {
+  return array1.some((el) => array2.includes(el));
+};
+
+console.log(
+  "findMatchingPrimitive: ",
+  findMatchingPrimitive(
+    [12, 34, 14, "a", "cookie"],
+    ["turtle", "orange", 98, 22, 12]
+  )
+);
+
+console.log(
+  "findMatchingPrimitiveII: should be false ",
+  findMatchingPrimitive(
+    [12, 34, 14, "a", "cookie"],
+    ["turtle", "orange", 98, 22, 13]
+  )
+);
