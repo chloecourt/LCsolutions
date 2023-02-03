@@ -1,0 +1,60 @@
+/*
+347. Top K Frequent Elements
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+ 
+*/
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function (nums, k) {
+  // create a cache
+  const cache = {};
+  // iterate through the array
+  for (let i = 0; i < nums.length; i++) {
+    // if nums[i] is in the cache increment value
+    if (cache[nums[i]] !== undefined) {
+      cache[nums[i]]++;
+      console.log({ cache });
+    } else {
+      cache[nums[i]] = 1;
+    }
+    // if nums[i] is not in the cache add it and set to 1
+  }
+  const answer = [];
+
+  for (const key in cache) {
+    const index = cache[key];
+    if (Array.isArray(answer[index])) {
+      answer[index].push(key);
+    } else {
+      answer[index] = [key];
+    }
+  }
+
+  let final = [];
+  for (let i = answer.length - 1; i >= 0; i--) {
+    if (k === 0) return final;
+    if (answer[i] !== undefined) {
+      final.push(...answer[i]);
+      k -= answer[i].length;
+    }
+  }
+
+  // iterate through the object looking for the values with t
+  //  const answer = Object.entries(cache).sort((a,b) =>  Number(b[1]) - Number(a[1]));
+  //     return answer.slice(0,k).map(el => Number(el[0]))
+};
