@@ -27,6 +27,7 @@ var topKFrequent = function (nums, k) {
   for (let i = 0; i < nums.length; i++) {
     // if nums[i] is in the cache increment value
     if (cache[nums[i]] !== undefined) {
+      // disable CssSyntaxError
       cache[nums[i]]++;
       console.log({ cache });
     } else {
