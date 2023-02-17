@@ -1,3 +1,20 @@
+/**
+ *class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor(value) {
+    this.head = { value, next: null };
+    this.tail = this.head;
+    this.length = 1;
+  }
+}
+ */
+
 class LinkedList {
   constructor(value) {
     this.head = {
