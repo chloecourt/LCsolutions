@@ -129,3 +129,7 @@ myLinkedList.remove(2);
 myLinkedList.printList();
 myLinkedList.remove(2);
 myLinkedList.printList();
+
+// DOUBLY LINKED LISTS MUST KNOW
+// requires more memory in storage
+//can traverse back and forth
