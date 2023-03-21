@@ -21,7 +21,9 @@ class LinkedList {
       value,
       next: null,
     };
+    // remember! tail = head
     this.tail = this.head;
+    // when you create you should always have one node
     this.length = 1;
   }
   append(value) {
